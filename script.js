@@ -38,15 +38,15 @@ $(document).ready(function() {
 		var minutes = parseInt(birthday_hour.substring(0,2))*60 + parseInt(birthday_hour.substring(3,6));
 	 	var now = moment(new Date(),"DD/MM/YYYY HH:mm"); //todays date
 		
-		var diff_years =now.diff(birthday,'years');
-		var diff_minutes = now.diff(birthday,'minutes')  ;
+		var diff_years =now.diff(birthday,'years');  //roznica w latach 
+		var diff_minutes = now.diff(birthday,'minutes')  ; //roznica w minutach
 		
 	if(!minutes){minutes =0;}
 
-	var diff = diff_minutes - minutes; //czas w minutach od urodzin po odjeciu godziny urodzenia
+	var diff = diff_minutes - minutes; //roznica w minutach od urodzin po odjeciu godziny urodzenia
 	
-	var sex =document.getElementById('sex').value;
-	var condition =document.getElementById('condition').value;
+	var sex =document.getElementById('sex').value;  //plec
+	var condition =document.getElementById('condition').value; //kondycja
 
 		if(birthday){
 			if(diff>0){
@@ -61,7 +61,6 @@ $(document).ready(function() {
 
 		function heart_beats() {
 			if(diff_years<=3){
-				// calc_beats_child(130);
 				heart_beats_total= diff*130;
 			}else if(diff_years<=8){
 				heart_beats_total = age_child*130+(diff-age_child)*100;
@@ -69,47 +68,44 @@ $(document).ready(function() {
 				heart_beats_total = age_child*130+age_kid *100 + (diff- age_kid_total)*85;
 			}else if(diff_years<=60){
 				middle_age();
-
 			     heart_beats_total = age_child*130+age_kid*100 +age_teen*85 + middle_age() ;
 			}else{
 				heart_beats_total = age_child*130 + age_kid *100 + age_teen*85 + middle_age() +(diff-age_matur_total)*60;			
 			}
 		}
 
-		
+
 		function middle_age(){
-		
 			switch(condition) {
-				    case "dobra":
-				   		(sex == "kobieta") ? beats = count_bets_condition(cond_dobra_fem) : beats = count_bets_condition(cond_dobra_male);
-				        break;
-				     case "wyczynowa":
-				    	(sex == "kobieta") ? beats = count_bets_condition(cond_wyczyn_fem) : beats = count_bets_condition(cond_wyczyn_male);
-				        break;
-				    case "swietna":
-				    	(sex == "kobieta") ? beats = count_bets_condition(cond_swietna_fem) : beats = count_bets_condition(cond_swietna_male);
-				        break;
-				    case "ponadprzecietna":
-				    	(sex == "kobieta") ? beats = count_bets_condition(cond_ponadprz_fem) : beats = count_bets_condition(cond_ponadprz_male);
-				        break;
-				    case "przecietna":
-				    	(sex == "kobieta") ? beats = count_bets_condition(cond_przec_fem) : beats = count_bets_condition(cond_przec_male);
-				        break;
-				    case "slaba":
-				    	(sex == "kobieta") ? beats = count_bets_condition(cond_slaba_fem) : beats = count_bets_condition(cond_slaba_male);
-				        break;
-				    case "zla":
-				    	(sex == "kobieta") ?  beats =  count_bets_condition(cond_zla_fem) : beats =  count_bets_condition(cond_zla_male);
-				        break;  
+			    case "dobra":
+			   		(sex == "kobieta") ? beats = count_bets_condition(cond_dobra_fem) : beats = count_bets_condition(cond_dobra_male);
+			        break;
+			     case "wyczynowa":
+			    	(sex == "kobieta") ? beats = count_bets_condition(cond_wyczyn_fem) : beats = count_bets_condition(cond_wyczyn_male);
+			        break;
+			    case "swietna":
+			    	(sex == "kobieta") ? beats = count_bets_condition(cond_swietna_fem) : beats = count_bets_condition(cond_swietna_male);
+			        break;
+			    case "ponadprzecietna":
+			    	(sex == "kobieta") ? beats = count_bets_condition(cond_ponadprz_fem) : beats = count_bets_condition(cond_ponadprz_male);
+			        break;
+			    case "przecietna":
+			    	(sex == "kobieta") ? beats = count_bets_condition(cond_przec_fem) : beats = count_bets_condition(cond_przec_male);
+			        break;
+			    case "slaba":
+			    	(sex == "kobieta") ? beats = count_bets_condition(cond_slaba_fem) : beats = count_bets_condition(cond_slaba_male);
+			        break;
+			    case "zla":
+			    	(sex == "kobieta") ?  beats =  count_bets_condition(cond_zla_fem) : beats =  count_bets_condition(cond_zla_male);
+			        break;  
 					}
-					return beats;
-
-
+			return beats;
 		}
 
 		function count_bets_condition(beats_count) {
+			//sprawdzamy czy mamy do czynienia z osoba powyzej czy ponizej 60 roku zycia;
+			//jezeli powyzej to bierzemy caly okres od 18 lat do 60 
 			if(diff>age_matur_total) {
-			
 				return age_matur*beats_count;
 			}else
 			    return (diff - age_teen_total)*beats_count;
