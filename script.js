@@ -12,7 +12,7 @@ $(document).ready(function() {
 	var age_matur_total = 31556952; //czas w minutach okresu doroslego 70/min 18-60
 	var age_matur =age_matur_total -age_teen_total; //czas w minutach okresu doroslego 70/min 18-60
 
-	var heart_bets_total;
+	var heart_beats_total;
 
 	var cond_wyczyn_fem = 57;
 	var cond_swietna_fem = 64;
@@ -47,11 +47,11 @@ $(document).ready(function() {
 	
 	var sex =document.getElementById('sex').value;
 	var condition =document.getElementById('condition').value;
-debugger;
+
 		if(birthday){
 			if(diff>0){
 				heart_beats();
-				document.getElementById('content').innerHTML = (heart_bets_total + " uderzen serca");
+				document.getElementById('content').innerHTML = (heart_beats_total + " uderzen serca");
 			}else{
 				document.getElementById('content').innerHTML = ("data urodzin nie moze byc pozniejsza od dzisiejszej");
 			}
@@ -62,21 +62,23 @@ debugger;
 		function heart_beats() {
 			if(diff_years<=3){
 				// calc_beats_child(130);
-				heart_bets_total= diff*130;
+				heart_beats_total= diff*130;
 			}else if(diff_years<=8){
-				heart_bets_total = age_child*130+(diff-age_child)*100;
+				heart_beats_total = age_child*130+(diff-age_child)*100;
 			}else if(diff_years<=18){
-				heart_bets_total = age_child*130+age_kid *100 + (diff- age_kid_total)*85;
+				heart_beats_total = age_child*130+age_kid *100 + (diff- age_kid_total)*85;
 			}else if(diff_years<=60){
 				middle_age();
 
-			     heart_bets_total = age_child*130+age_kid*100 +age_teen*85 + beats;
+			     heart_beats_total = age_child*130+age_kid*100 +age_teen*85 + middle_age() ;
 			}else{
-				heart_bets_total = age_child*130 + age_kid *100 + age_teen*85 + middle_age() +(diff-age_matur_total)*60;			
+				heart_beats_total = age_child*130 + age_kid *100 + age_teen*85 + middle_age() +(diff-age_matur_total)*60;			
 			}
 		}
+
+		
 		function middle_age(){
-			
+		
 			switch(condition) {
 				    case "dobra":
 				   		(sex == "kobieta") ? beats = count_bets_condition(cond_dobra_fem) : beats = count_bets_condition(cond_dobra_male);
