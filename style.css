@@ -52,4 +52,18 @@
     height: 28px;
 
 }
-
+.select {
+    margin-left: 90px;
+    margin-bottom: 20px;
+}
+.select select {
+    
+}
+select {
+    margin-left: 23px;
+    display: inline-block;
+    margin-right: 0;
+}
+#sex{
+    margin-left: 62px;
+}
