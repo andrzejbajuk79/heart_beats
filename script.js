@@ -51,7 +51,8 @@ $(document).ready(function() {
 		if(birthday){
 			if(diff>0){
 				heart_beats();
-				document.getElementById('content').innerHTML = (Math.floor(heart_beats_total) + " tys. uderzen serca");
+				document.getElementById('content').innerHTML = ("masz : " +diff_years +"lat <br>" +
+				"a twoje serce bilo "  +Math.floor(heart_beats_total) + " tys. razy do tej pory");
 			}else{
 				document.getElementById('content').innerHTML = ("data urodzin nie moze byc pozniejsza od dzisiejszej");
 			}
