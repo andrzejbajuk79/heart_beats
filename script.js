@@ -47,7 +47,7 @@ $(document).ready(function() {
 	
 	var sex =document.getElementById('sex').value;  //plec
 	var condition =document.getElementById('condition').value; //kondycja
-
+debugger;
 		if(birthday){
 			if(diff>0){
 				heart_beats();
@@ -78,25 +78,25 @@ $(document).ready(function() {
 		function middle_age(){
 			switch(condition) {
 			    case "dobra":
-			   		(sex == "kobieta") ? beats = count_bets_condition(cond_dobra_fem) : beats = count_bets_condition(cond_dobra_male);
+			   		 beats = (sex == "kobieta") ?  count_bets_condition(cond_dobra_fem) :  count_bets_condition(cond_dobra_male);
 			        break;
 			     case "wyczynowa":
-			    	(sex == "kobieta") ? beats = count_bets_condition(cond_wyczyn_fem) : beats = count_bets_condition(cond_wyczyn_male);
+			    	beats = (sex == "kobieta") ?  count_bets_condition(cond_wyczyn_fem) : count_bets_condition(cond_wyczyn_male);
 			        break;
 			    case "swietna":
-			    	(sex == "kobieta") ? beats = count_bets_condition(cond_swietna_fem) : beats = count_bets_condition(cond_swietna_male);
+			    	beats = (sex == "kobieta") ? count_bets_condition(cond_swietna_fem) : count_bets_condition(cond_swietna_male);
 			        break;
 			    case "ponadprzecietna":
-			    	(sex == "kobieta") ? beats = count_bets_condition(cond_ponadprz_fem) : beats = count_bets_condition(cond_ponadprz_male);
+			    	beats =(sex == "kobieta") ?  count_bets_condition(cond_ponadprz_fem) : count_bets_condition(cond_ponadprz_male);
 			        break;
 			    case "przecietna":
-			    	(sex == "kobieta") ? beats = count_bets_condition(cond_przec_fem) : beats = count_bets_condition(cond_przec_male);
+			    	beats =(sex == "kobieta") ? count_bets_condition(cond_przec_fem) : count_bets_condition(cond_przec_male);
 			        break;
 			    case "slaba":
-			    	(sex == "kobieta") ? beats = count_bets_condition(cond_slaba_fem) : beats = count_bets_condition(cond_slaba_male);
+			    	beats =(sex == "kobieta") ?  count_bets_condition(cond_slaba_fem) :  count_bets_condition(cond_slaba_male);
 			        break;
 			    case "zla":
-			    	(sex == "kobieta") ?  beats =  count_bets_condition(cond_zla_fem) : beats =  count_bets_condition(cond_zla_male);
+			    	beats =(sex == "kobieta") ?count_bets_condition(cond_zla_fem) :  count_bets_condition(cond_zla_male);
 			        break;  
 					}
 			return beats;
