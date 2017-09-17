@@ -66,9 +66,18 @@ debugger;
 			}else if(diff_years<=8){
 				heart_bets_total = age_child*130+(diff-age_child)*100;
 			}else if(diff_years<=18){
-				heart_bets_total = age_child*130+(age_kid )*100 + (diff- age_kid_total)*85;
+				heart_bets_total = age_child*130+age_kid *100 + (diff- age_kid_total)*85;
 			}else if(diff_years<=60){
-				switch(condition) {
+				middle_age();
+
+			     heart_bets_total = age_child*130+age_kid*100 +age_teen*85 + beats;
+			}else{
+				heart_bets_total = age_child*130 + age_kid *100 + age_teen*85 + middle_age() +(diff-age_matur_total)*60;			
+			}
+		}
+		function middle_age(){
+			
+			switch(condition) {
 				    case "dobra":
 				   		(sex == "kobieta") ? beats = count_bets_condition(cond_dobra_fem) : beats = count_bets_condition(cond_dobra_male);
 				        break;
@@ -89,18 +98,19 @@ debugger;
 				        break;
 				    case "zla":
 				    	(sex == "kobieta") ?  beats =  count_bets_condition(cond_zla_fem) : beats =  count_bets_condition(cond_zla_male);
-				        break;
-				           
+				        break;  
 					}
+					return beats;
 
-			     heart_bets_total = age_child*130+(age_kid )*100 +(age_teen)*85 + beats;
-			}else{
-				heart_bets_total = age_child*130 + (age_kid )*100 + (age_teen)*85 + (age_matur)*70 +(diff-age_matur_total)*60;			
-			}
+
 		}
 
 		function count_bets_condition(beats_count) {
-			return (diff - age_teen_total)*beats_count;
+			if(diff>age_matur_total) {
+			
+				return age_matur*beats_count;
+			}else
+			    return (diff - age_teen_total)*beats_count;
 		}
 	});
 });
