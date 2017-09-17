@@ -1,10 +1,5 @@
 
 
-// u niemowląt: 130/min 0-3 lata ,  1,577,847 minutes
-// u dzieci: 100/min 3-8 lat , 8 lat = 4,207,593 minutes
-// u młodzieży: 85/min 8-18 lat 18 lat = 9,467,085
-// u dorosłych: 70/min 18-60 lat 60 lat = 31,556,952;
-// u ludzi starszych: 60/min powyzej 60 lat
 $(document).ready(function() {
 	var age_child = 1577847; //czas w minutach okresu niemowlecego 130/min 0-3 lata
 	
