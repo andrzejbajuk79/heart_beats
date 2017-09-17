@@ -78,35 +78,35 @@ $(document).ready(function() {
 		function middle_age(){
 			switch(condition) {
 			    case "dobra":
-			   		 beats = (sex == "kobieta") ?  count_bets_condition(cond_dobra_fem) :  count_bets_condition(cond_dobra_male);
+			   		 beats = (sex == "kobieta") ?  calc_beats(cond_dobra_fem) :  calc_beats(cond_dobra_male);
 			        break;
 			     case "wyczynowa":
-			    	beats = (sex == "kobieta") ?  count_bets_condition(cond_wyczyn_fem) : count_bets_condition(cond_wyczyn_male);
+			    	beats = (sex == "kobieta") ?  calc_beats(cond_wyczyn_fem) : calc_beats(cond_wyczyn_male);
 			        break;
 			    case "swietna":
-			    	beats = (sex == "kobieta") ? count_bets_condition(cond_swietna_fem) : count_bets_condition(cond_swietna_male);
+			    	beats = (sex == "kobieta") ? calc_beats(cond_swietna_fem) : calc_beats(cond_swietna_male);
 			        break;
 			    case "ponadprzecietna":
-			    	beats =(sex == "kobieta") ?  count_bets_condition(cond_ponadprz_fem) : count_bets_condition(cond_ponadprz_male);
+			    	beats =(sex == "kobieta") ?  calc_beats(cond_ponadprz_fem) : calc_beats(cond_ponadprz_male);
 			        break;
 			    case "przecietna":
-			    	beats =(sex == "kobieta") ? count_bets_condition(cond_przec_fem) : count_bets_condition(cond_przec_male);
+			    	beats =(sex == "kobieta") ? calc_beats(cond_przec_fem) : calc_beats(cond_przec_male);
 			        break;
 			    case "slaba":
-			    	beats =(sex == "kobieta") ?  count_bets_condition(cond_slaba_fem) :  count_bets_condition(cond_slaba_male);
+			    	beats =(sex == "kobieta") ?  calc_beats(cond_slaba_fem) :  calc_beats(cond_slaba_male);
 			        break;
 			    case "zla":
-			    	beats =(sex == "kobieta") ?count_bets_condition(cond_zla_fem) :  count_bets_condition(cond_zla_male);
+			    	beats =(sex == "kobieta") ?calc_beats(cond_zla_fem) :  calc_beats(cond_zla_male);
 			        break;  
 					}
 			return beats;
 		}
 
-		function count_bets_condition(beats_per_minute) {
+		function calc_beats(beats_per_minute) {
 			//sprawdzamy czy mamy do czynienia z osoba powyzej czy ponizej 60 roku zycia;
 			//jezeli powyzej to bierzemy caly okres od 18 lat do 60 
 			if(diff>age_matur_total) {
-				return age_matur*beats_count;
+				return age_matur*beats_per_minute;
 			}else
 			    return (diff - age_teen_total)*beats_per_minute;
 		}
