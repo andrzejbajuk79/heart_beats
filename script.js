@@ -102,13 +102,13 @@ $(document).ready(function() {
 			return beats;
 		}
 
-		function count_bets_condition(beats_count) {
+		function count_bets_condition(beats_per_minute) {
 			//sprawdzamy czy mamy do czynienia z osoba powyzej czy ponizej 60 roku zycia;
 			//jezeli powyzej to bierzemy caly okres od 18 lat do 60 
 			if(diff>age_matur_total) {
 				return age_matur*beats_count;
 			}else
-			    return (diff - age_teen_total)*beats_count;
+			    return (diff - age_teen_total)*beats_per_minute;
 		}
 	});
 });
