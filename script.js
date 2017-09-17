@@ -43,15 +43,15 @@ $(document).ready(function() {
 		
 	if(!minutes){minutes =0;}
 
-	var diff = diff_minutes - minutes; //roznica w minutach od urodzin po odjeciu godziny urodzenia
-	
-	var sex =document.getElementById('sex').value;  //plec
-	var condition =document.getElementById('condition').value; //kondycja
+		var diff = diff_minutes - minutes; //roznica w minutach od urodzin po odjeciu godziny urodzenia
+		
+		var sex =document.getElementById('sex').value;  //plec
+		var condition =document.getElementById('condition').value; //kondycja
 
 		if(birthday){
 			if(diff>0){
 				heart_beats();
-				document.getElementById('content').innerHTML = (heart_beats_total + " uderzen serca");
+				document.getElementById('content').innerHTML = (Math.floor(heart_beats_total) + " tys. uderzen serca");
 			}else{
 				document.getElementById('content').innerHTML = ("data urodzin nie moze byc pozniejsza od dzisiejszej");
 			}
@@ -61,16 +61,16 @@ $(document).ready(function() {
 
 		function heart_beats() {
 			if(diff_years<=3){
-				heart_beats_total= diff*130;
+				heart_beats_total= diff*130/1000;
 			}else if(diff_years<=8){
-				heart_beats_total = age_child*130+(diff-age_child)*100;
+				heart_beats_total = (age_child*130+(diff-age_child)*100)/1000;
 			}else if(diff_years<=18){
-				heart_beats_total = age_child*130+age_kid *100 + (diff- age_kid_total)*85;
+				heart_beats_total = (age_child*130+age_kid *100 + (diff- age_kid_total)*85)/1000;
 			}else if(diff_years<=60){
 				middle_age();
-			     heart_beats_total = age_child*130+age_kid*100 +age_teen*85 + middle_age() ;
+			     heart_beats_total = (age_child*130+age_kid*100 +age_teen*85 + middle_age()/1000)/1000;
 			}else{
-				heart_beats_total = age_child*130 + age_kid *100 + age_teen*85 + middle_age() +(diff-age_matur_total)*60;			
+				heart_beats_total = (age_child*130 + age_kid *100 + age_teen*85 + middle_age()/1000 +(diff-age_matur_total)*60)/1000;			
 			}
 		}
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
 			    case "przecietna":
 			    	beats =(sex == "kobieta") ? calc_beats(cond_przec_fem) : calc_beats(cond_przec_male);
 			        break;
-			    case "slaba":
+			    case "słaba":
 			    	beats =(sex == "kobieta") ?  calc_beats(cond_slaba_fem) :  calc_beats(cond_slaba_male);
 			        break;
 			    case "zla":
