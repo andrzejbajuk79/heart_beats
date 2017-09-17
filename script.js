@@ -3,14 +3,14 @@
 $(document).ready(function() {
 	var age_child = 1577847; //czas w minutach okresu niemowlecego 130/min 0-3 lata
 	
-	var age_kid_total = 4207593 ;  //czas w minutach ou dziecka 100/min 3-8 lat
-	var age_kid = age_kid_total - age_child;  //czas w minutach ou dziecka 100/min 3-8 lat
+	var age_kid_total = 4207593 ;  //calkowit czas w minutach ou dziecka 100/min 3-8 lat
+	var age_kid = age_kid_total - age_child;  //czas w minutach ou dziecka miedzy 3-8 rokiem zycia
 	
-	var age_teen_total = 9467085; //czas w minutach u nastolatkja 85/min 8-18 
-	var age_teen = age_teen_total - age_kid_total; //czas w minutach u nastolatkja 85/min 8-18 
+	var age_teen_total = 9467085; //calkowity czas w minutach u nastolatkja 85/min 8-18 
+	var age_teen = age_teen_total - age_kid_total; //czas w minutach u nastolatkja miedzy 8-18  rokiem zycia
 	
-	var age_matur_total = 31556952; //czas w minutach okresu doroslego 70/min 18-60
-	var age_matur =age_matur_total -age_teen_total; //czas w minutach okresu doroslego 70/min 18-60
+	var age_matur_total = 31556952; //calkowity czas w minutach okresu doroslego 70/min 18-60
+	var age_matur =age_matur_total -age_teen_total; //czas w minutach okresu doroslego miedzy  18-60 rokiem zycia
 
 	var heart_beats_total;
 
@@ -47,7 +47,7 @@ $(document).ready(function() {
 	
 	var sex =document.getElementById('sex').value;  //plec
 	var condition =document.getElementById('condition').value; //kondycja
-debugger;
+
 		if(birthday){
 			if(diff>0){
 				heart_beats();
