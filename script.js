@@ -14,6 +14,11 @@ $(document).ready(function() {
     // 60/minute srednie tetno dla osob powyzej 60 roku zycia
     
 	var heart_beats_total;
+	var child_puls =130; //sredni puls dla noworodka
+	var kids_puls =100;  // sredni puls dla dziecka
+	var teen_puls =85;   // sredni puls dla nastolatka
+	var old_puls =60;    //sredni puls dla osoby powyzej 60 roku zycia
+	
 
 	var cond_wyczyn_fem = 57;
 	var cond_swietna_fem = 64;
@@ -65,14 +70,14 @@ $(document).ready(function() {
 			if(diff_years<=3){
 				heart_beats_total= diff*130/1000;
 			}else if(diff_years<=8){
-				heart_beats_total = (age_child*130+(diff-age_child)*100)/1000;
+				heart_beats_total = (age_child*child_puls+(diff-age_child)*100)/1000;
 			}else if(diff_years<=18){
-				heart_beats_total = (age_child*130+age_kid *100 + (diff- age_kid_total)*85)/1000;
+				heart_beats_total = (age_child*child_puls+age_kid *kids_puls + (diff- age_kid_total)*teen_puls)/1000;
 			}else if(diff_years<=60){
 				middle_age();
-			     heart_beats_total = (age_child*130+age_kid*100 +age_teen*85 + middle_age()/1000)/1000;
+			     heart_beats_total = (age_child*child_puls+age_kid*kids_puls+age_teen*teen_puls + middle_age()/1000)/1000;
 			}else{
-				heart_beats_total = (age_child*130 + age_kid *100 + age_teen*85 + middle_age()/1000 +(diff-age_matur_total)*60)/1000;			
+				heart_beats_total = (age_child*child_puls+ age_kid *kids_puls + age_teen*teen_puls+ middle_age()/1000 +(diff-age_matur_total)*old_puls)/1000;			
 			}
 		}
 
