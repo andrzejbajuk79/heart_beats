@@ -39,18 +39,18 @@ $(document).ready(function() {
 	
 
 	$("#calculate").click(function(){
-
+debugger;
 		var birthday = document.getElementById("birth_date").value;
 		var birthday_hour = document.getElementById("birth_hour").value;
-		var minutes = parseInt(birthday_hour.substring(0,2))*60 + parseInt(birthday_hour.substring(3,6));
+		var hours = parseInt(birthday_hour.substring(0,2))*60;
+		var minutes =  parseInt(birthday_hour.substring(3,6));
+		var minutes_total = hours +minutes; //godzina urodzenia w przeliczeniu na minuty
 	 	var now = moment(new Date(),"DD/MM/YYYY HH:mm"); //todays date
 		
 		var diff_years =now.diff(birthday,'years');  //roznica w latach 
 		var diff_minutes = now.diff(birthday,'minutes')  ; //roznica w minutach
-		
-	if(!minutes){minutes =0;}
-
-		var diff = diff_minutes - minutes; //roznica w minutach od urodzin po odjeciu godziny urodzenia
+	
+		var diff = diff_minutes - minutes_total; //roznica w minutach od urodzin po odjeciu godziny urodzenia
 		
 		var sex =document.getElementById('sex').value;  //plec
 		var condition =document.getElementById('condition').value; //kondycja
