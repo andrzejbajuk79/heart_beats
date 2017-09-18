@@ -11,7 +11,8 @@ $(document).ready(function() {
 	
 	var age_matur_total = 31556952; //calkowity czas w minutach okresu doroslego 60lat ,srednie tetno 70/min 
 	var age_matur =age_matur_total -age_teen_total; //czas w minutach okresu doroslego miedzy  18-60 rokiem zycia
-
+    // 60/minute srednie tetno dla osob powyzej 60 roku zycia
+    
 	var heart_beats_total;
 
 	var cond_wyczyn_fem = 57;
