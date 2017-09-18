@@ -1,15 +1,15 @@
 
 
 $(document).ready(function() {
-	var age_child = 1577847; //czas w minutach okresu niemowlecego 130/min 0-3 lata
+	var age_child = 1577847; //czas w minutach okresu niemowlecego 0-3 lata, srednie tetno : 130/min 
 	
-	var age_kid_total = 4207593 ;  //calkowit czas w minutach ou dziecka 100/min 3-8 lat
+	var age_kid_total = 4207593 ;  //calkowit czas w minutach ou dziecka 8 lat , srednie tetno : 100/min 
 	var age_kid = age_kid_total - age_child;  //czas w minutach ou dziecka miedzy 3-8 rokiem zycia
 	
-	var age_teen_total = 9467085; //calkowity czas w minutach u nastolatkja 85/min 8-18 
+	var age_teen_total = 9467085; //calkowity czas w minutach u nastolatkja 18 lat,   srednie tetno 85/min 
 	var age_teen = age_teen_total - age_kid_total; //czas w minutach u nastolatkja miedzy 8-18  rokiem zycia
 	
-	var age_matur_total = 31556952; //calkowity czas w minutach okresu doroslego 70/min 18-60
+	var age_matur_total = 31556952; //calkowity czas w minutach okresu doroslego 60lat ,srednie tetno 70/min 
 	var age_matur =age_matur_total -age_teen_total; //czas w minutach okresu doroslego miedzy  18-60 rokiem zycia
 
 	var heart_beats_total;
@@ -79,25 +79,25 @@ $(document).ready(function() {
 		function middle_age(){
 			switch(condition) {
 			    case "dobra":
-			   		 beats = (sex == "kobieta") ?  calc_beats(cond_dobra_fem) :  calc_beats(cond_dobra_male);
+			   		 beats = (sex == "kobieta") ?  calc_beats(cond_dobra_fem)  :  calc_beats(cond_dobra_male);
 			        break;
 			     case "wyczynowa":
-			    	beats = (sex == "kobieta") ?  calc_beats(cond_wyczyn_fem) : calc_beats(cond_wyczyn_male);
+			    	beats = (sex == "kobieta") ?  calc_beats(cond_wyczyn_fem)  : calc_beats(cond_wyczyn_male);
 			        break;
 			    case "swietna":
-			    	beats = (sex == "kobieta") ? calc_beats(cond_swietna_fem) : calc_beats(cond_swietna_male);
+			    	beats = (sex == "kobieta") ? calc_beats(cond_swietna_fem)  : calc_beats(cond_swietna_male);
 			        break;
 			    case "ponadprzecietna":
 			    	beats =(sex == "kobieta") ?  calc_beats(cond_ponadprz_fem) : calc_beats(cond_ponadprz_male);
 			        break;
 			    case "przecietna":
-			    	beats =(sex == "kobieta") ? calc_beats(cond_przec_fem) : calc_beats(cond_przec_male);
+			    	beats =(sex == "kobieta") ? calc_beats(cond_przec_fem)     : calc_beats(cond_przec_male);
 			        break;
 			    case "słaba":
-			    	beats =(sex == "kobieta") ?  calc_beats(cond_slaba_fem) :  calc_beats(cond_slaba_male);
+			    	beats =(sex == "kobieta") ?  calc_beats(cond_slaba_fem)    :  calc_beats(cond_slaba_male);
 			        break;
 			    case "zla":
-			    	beats =(sex == "kobieta") ?calc_beats(cond_zla_fem) :  calc_beats(cond_zla_male);
+			    	beats =(sex == "kobieta") ?calc_beats(cond_zla_fem)        :  calc_beats(cond_zla_male);
 			        break;  
 					}
 			return beats;
