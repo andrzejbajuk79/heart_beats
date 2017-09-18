@@ -19,7 +19,7 @@ $(document).ready(function() {
 	var teen_puls =85;   // sredni puls dla nastolatka
 	var old_puls =60;    //sredni puls dla osoby powyzej 60 roku zycia
 	
-
+	//sredni puls dla kobiety w wieku doroslym zaleznie od kondycji
 	var cond_wyczyn_fem = 57;
 	var cond_swietna_fem = 64;
 	var cond_dobra_fem = 67;
@@ -28,6 +28,7 @@ $(document).ready(function() {
 	var cond_slaba_fem = 80;
 	var cond_zla_fem = 84;
 
+    //mezczyzny w wieku doroslym  zaleznie od kondycji
 	var cond_wyczyn_male = 53;
 	var cond_swietna_male = 60;
 	var cond_dobra_male = 65;
