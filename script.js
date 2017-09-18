@@ -69,7 +69,7 @@ $(document).ready(function() {
 
 		function heart_beats() {
 			if(diff_years<=3){
-				heart_beats_total= diff*130/1000;
+				heart_beats_total= diff*child_puls/1000;
 			}else if(diff_years<=8){
 				heart_beats_total = (age_child*child_puls+(diff-age_child)*100)/1000;
 			}else if(diff_years<=18){
