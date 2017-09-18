@@ -71,7 +71,7 @@ $(document).ready(function() {
 			if(diff_years<=3){
 				heart_beats_total= diff*child_puls/1000;
 			}else if(diff_years<=8){
-				heart_beats_total = (age_child*child_puls+(diff-age_child)*100)/1000;
+				heart_beats_total = (age_child*child_puls+(diff-age_child)*kids_puls)/1000;
 			}else if(diff_years<=18){
 				heart_beats_total = (age_child*child_puls+age_kid *kids_puls + (diff- age_kid_total)*teen_puls)/1000;
 			}else if(diff_years<=60){
@@ -104,7 +104,7 @@ $(document).ready(function() {
 			    	beats =(sex == "kobieta") ?  calc_beats(cond_slaba_fem)    :  calc_beats(cond_slaba_male);
 			        break;
 			    case "zla":
-			    	beats =(sex == "kobieta") ?calc_beats(cond_zla_fem)        :  calc_beats(cond_zla_male);
+			    	beats =(sex == "kobieta") ?  calc_beats(cond_zla_fem)        :  calc_beats(cond_zla_male);
 			        break;  
 					}
 			return beats;
