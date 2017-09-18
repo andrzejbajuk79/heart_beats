@@ -76,9 +76,9 @@ $(document).ready(function() {
 				heart_beats_total = (age_child*child_puls+age_kid *kids_puls + (diff- age_kid_total)*teen_puls)/1000;
 			}else if(diff_years<=60){
 				middle_age();
-			     heart_beats_total = (age_child*child_puls+age_kid*kids_puls+age_teen*teen_puls + middle_age()/1000)/1000;
+			     heart_beats_total = (age_child*child_puls+age_kid*kids_puls+age_teen*teen_puls + middle_age())/1000;
 			}else{
-				heart_beats_total = (age_child*child_puls+ age_kid *kids_puls + age_teen*teen_puls+ middle_age()/1000 +(diff-age_matur_total)*old_puls)/1000;			
+				heart_beats_total = (age_child*child_puls+ age_kid *kids_puls + age_teen*teen_puls+ middle_age() +(diff-age_matur_total)*old_puls)/1000;			
 			}
 		}
 
